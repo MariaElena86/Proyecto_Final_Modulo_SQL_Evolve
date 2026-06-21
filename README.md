@@ -1,5 +1,7 @@
 ## Análisis de Ventas de Teléfonos Móviles en España
 
+## Link al video con la presentacion https://www.loom.com/share/44fed75c4d2e48ffac90f24a2bb82dca
+
 ### Descripción del Proyecto
 Este proyecto implementa un modelo relacional diseñado específicamente para el análisis de ventas de 
 dispositivos móviles en el mercado español.
