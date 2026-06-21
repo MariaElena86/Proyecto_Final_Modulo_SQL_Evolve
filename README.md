@@ -7,11 +7,11 @@ El objetivo principal es transformar los datos brutos (desde un fichero CSV gene
 en una estructura que permita realizar un analisis claro de los datos para responder las preguntas de negocio.
 
 ### Preguntas de Negocio
-¿Cuál es la cuota de mercado por fabricante según el valor total de las ventas? 
-¿Qué comunidad autónoma tiene los ingresos de venta medio más alto? 
-¿Cuáles son los modelos de móviles más vendidos y qué cuota de volumen representan en el mercado?
-¿Qué marcas generan el mayor beneficio neto y cuál es el % de margen real tras descontar costes?
-¿Cómo han evolucionado los ingresos por año?
+1. ¿Cuál es la cuota de mercado por fabricante según el valor total de las ventas? 
+2. ¿Qué comunidad autónoma tiene los ingresos de venta medio más alto? 
+3. ¿Cuáles son los modelos de móviles más vendidos y qué cuota de volumen representan en el mercado?
+4. ¿Qué marcas generan el mayor beneficio neto y cuál es el % de margen real tras descontar costes?
+5. ¿Cómo han evolucionado los ingresos por año?
 
 ### Requisitos del Sistema
 Gestor de Base de Datos Workbench con MySQL.
@@ -33,27 +33,27 @@ staging_ventas: Tabla temporal para realizar la carga de los datos brutos del CS
 
 
 ### Proceso de Carga y Limpieza
-Origen: Los datos se cargan desde un fichero csv con 3,000 registros.
-Normalización: Se transformaron fechas de formato texto a DATE y se derivaron campos como el precio_venta a partir del importe total y las unidades.
-Depuración: Se detectaron y corrigieron 3 filas con valores nulos en algunos campos para asegurar la integridad del análisis.
-Resultado final: 2,997 transacciones procesadas con éxito.
+- Origen: Los datos se cargan desde un fichero csv con 3,000 registros.
+- Normalización: Se transformaron fechas de formato texto a DATE y se derivaron campos como el precio_venta a partir del importe total y las unidades.
+- Depuración: Se detectaron y corrigieron 3 filas con valores nulos en algunos campos para asegurar la integridad del análisis.
+- Resultado final: 2,997 transacciones procesadas con éxito.
 
 ### Ejecutar el proyecto
-Paso1: Seleccionar todo el contenido del fichero 01_schema.sql y ejecutar.
-Paso 2: Importar los datos desde el csv a la tabla staging_ventas.
+- Paso1: Seleccionar todo el contenido del fichero 01_schema.sql y ejecutar.
+- Paso 2: Importar los datos desde el csv a la tabla staging_ventas.
         Abrir la bd proyecto_final.
         Click derecho, seleccionar la opcion Tabla Data Import Wizard.
         Completar los pasos de improtar.
-Paso 3: Seleccionar todo el contenido del fichero 02_data.sql y ejecutar.
-Paso 4: Seleccionar todo el contenido del fichero 03_eda.sql y ejecutar.
+- Paso 3: Seleccionar todo el contenido del fichero 02_data.sql y ejecutar.
+- Paso 4: Seleccionar todo el contenido del fichero 03_eda.sql y ejecutar.
 
 ### Insights de Negocio (Resultados)
 Tras la ejecución del análisis en 03_eda.sql, se obtuvieron los siguientes hallazgos estratégicos:
 
-Cuota de Mercado: El modelo OPPO lidera el mercado en valor con un 22,03% de la facturación total (1.555.971,39€), seguido por Xiaomi, Apple y Samsung.
-Rentabilidad Geográfica: El País Vasco es la región más rentable, con un ingreso medio por tienda de 940.993,81€.
-Eficiencia Financiera: Aunque OPPO genera más volumen, Motorola es la marca más eficiente porcentualmente, con un margen de beneficio real del 31,13%.
-Tendencia Temporal: Tras un ligero descenso en 2024 (-4,23%), el mercado mostró una recuperación sólida en 2025 con un crecimiento del 6,19%.
+- Cuota de Mercado: El modelo OPPO lidera el mercado en valor con un 22,03% de la facturación total (1.555.971,39€), seguido por Xiaomi, Apple y Samsung.
+- Rentabilidad Geográfica: El País Vasco es la región más rentable, con un ingreso medio por tienda de 940.993,81€.
+- Eficiencia Financiera: Aunque OPPO genera más volumen, Motorola es la marca más eficiente porcentualmente, con un margen de beneficio real del 31,13%.
+- Tendencia Temporal: Tras un ligero descenso en 2024 (-4,23%), el mercado mostró una recuperación sólida en 2025 con un crecimiento del 6,19%.
 
 
 
